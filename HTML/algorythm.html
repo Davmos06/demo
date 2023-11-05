@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Определение типа места в плацкартном вагоне</title>
+    <script>
+      function checkSeatType() {
+        let seatNumber = parseInt(document.getElementById("seatNumber").value);
+        let seatType;
+
+        if (seatNumber % 2 === 0) {
+          seatType = "нижнее";
+        } else {
+          seatType = "верхнее";
+        }
+
+        if (seatNumber <= 36) {
+          seatType += " в купе";
+        } else {
+          seatType += " боковое";
+        }
+
+        document.getElementById("result").innerHTML = "Это место - " + seatType;
+      }
+    </script>
+  </head>
+  <body>
+    <label for="seatNumber">Введите номер места:</label>
+    <input type="number" id="seatNumber" name="seatNumber" />
+    <br />
+    <button onclick="checkSeatType()">Определить тип места</button>
+    <br />
+    <p id="result"></p>
+  </body>
+</html>
